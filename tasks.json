@@ -1,0 +1,102 @@
+{
+  "project": "Roadmap OS",
+  "updatedAt": "2026-03-14",
+  "taskLimit": 5,
+  "tasks": [
+    {
+      "id": "phase-1-foundation",
+      "phase": "Foundation",
+      "order": 1,
+      "title": "Establish the local-first app shell and clean architecture baseline",
+      "status": "in_progress",
+      "goal": "Create the frontend scaffold, architecture boundaries, generated roadmap seed flow, and core engineering governance.",
+      "deliverables": [
+        "React and TypeScript app scaffold",
+        "Generated roadmap seed pipeline from roadmap.md",
+        "Architecture documentation and engineering rules"
+      ],
+      "acceptanceCriteria": [
+        "The app starts with the generated roadmap data available",
+        "Folder layout matches domain, application, infrastructure, presentation, and app layers",
+        "Rules and architecture docs are checked into the repository"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "phase-2-weekly-execution",
+      "phase": "Execution Tracking",
+      "order": 2,
+      "title": "Implement weekly planning, session logging, and checkpoint capture",
+      "status": "pending",
+      "goal": "Make the weekly schedule actionable by allowing session logs, delivery status, blockers, and next actions to be recorded locally.",
+      "deliverables": [
+        "Study session workflow",
+        "Weekly checkpoint workflow",
+        "Current-week summary card"
+      ],
+      "acceptanceCriteria": [
+        "A user can select a roadmap week and log multiple sessions",
+        "A user can save and revisit checkpoint data for a week",
+        "Weekly progress metrics update from persisted local data"
+      ],
+      "dependencies": ["phase-1-foundation"]
+    },
+    {
+      "id": "phase-3-reporting",
+      "phase": "Reporting",
+      "order": 3,
+      "title": "Build reporting, pacing alerts, and export flows",
+      "status": "pending",
+      "goal": "Turn raw weekly activity into a reportable artifact that shows pace, outcomes, blockers, and next steps.",
+      "deliverables": [
+        "Weekly summary aggregation",
+        "Pacing alerts",
+        "Markdown report export"
+      ],
+      "acceptanceCriteria": [
+        "The app computes planned versus actual hours for a week",
+        "The app shows a risk or pace alert when progress falls behind",
+        "The user can export a weekly Markdown report"
+      ],
+      "dependencies": ["phase-2-weekly-execution"]
+    },
+    {
+      "id": "phase-4-project-lanes",
+      "phase": "Strategic Tracking",
+      "order": 4,
+      "title": "Track project lanes and align them with the learning roadmap",
+      "status": "pending",
+      "goal": "Keep long-horizon project execution visible without overwhelming the weekly study workflow.",
+      "deliverables": [
+        "Project lane board for SIMShield and CerviCare",
+        "Editable project statuses and notes",
+        "Clear separation between weekly execution and strategic project planning"
+      ],
+      "acceptanceCriteria": [
+        "Project lane state persists locally",
+        "Status and notes can be updated independently of weekly sessions",
+        "The dashboard keeps project work secondary to the current-week schedule"
+      ],
+      "dependencies": ["phase-3-reporting"]
+    },
+    {
+      "id": "phase-5-hardening",
+      "phase": "Hardening",
+      "order": 5,
+      "title": "Harden the app for routine use and desktop packaging readiness",
+      "status": "pending",
+      "goal": "Prepare the codebase for daily use, future Tauri packaging, and higher delivery confidence.",
+      "deliverables": [
+        "Verification coverage for core logic",
+        "Storage migration strategy if data shape changes",
+        "Packaging notes for future Windows desktop wrapping"
+      ],
+      "acceptanceCriteria": [
+        "Core summary and date logic are covered by tests",
+        "User data survives app restarts in the browser environment",
+        "Packaging constraints and follow-up work are documented"
+      ],
+      "dependencies": ["phase-4-project-lanes"]
+    }
+  ]
+}

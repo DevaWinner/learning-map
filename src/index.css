@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 48 55% 98%;
+  --foreground: 149 32% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 149 32% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 149 32% 11%;
+  --primary: 143 47% 28%;
+  --primary-foreground: 60 9% 98%;
+  --secondary: 43 100% 89%;
+  --secondary-foreground: 149 32% 11%;
+  --muted: 90 18% 88%;
+  --muted-foreground: 147 8% 42%;
+  --accent: 42 96% 84%;
+  --accent-foreground: 149 32% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 60 9% 98%;
+  --border: 140 12% 80%;
+  --input: 140 12% 80%;
+  --ring: 143 47% 28%;
+  --radius: 1rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at top left, hsl(42 100% 82% / 0.55), transparent 32%),
+      radial-gradient(circle at right center, hsl(140 37% 55% / 0.14), transparent 24%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(102 22% 95%) 100%);
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply text-sm;
+  }
+}
+
