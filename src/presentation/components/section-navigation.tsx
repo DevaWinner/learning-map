@@ -32,9 +32,13 @@ export function SectionNavigation() {
     '/overview';
 
   return (
-    <div className="mx-auto mt-4 w-full max-w-md sm:max-w-none">
-      <Tabs value={currentPath} onValueChange={(value) => void navigate(value)}>
-        <TabsList className="grid h-12 w-full grid-cols-4 rounded-xl border border-border/70 bg-muted/65 p-1 shadow-sm backdrop-blur-sm sm:inline-flex sm:h-12 sm:w-auto sm:rounded-2xl sm:p-1">
+    <div className="sticky top-4 z-30 mt-4 w-full pb-3">
+      <Tabs
+        value={currentPath}
+        onValueChange={(value) => void navigate(value)}
+        className="block w-full"
+      >
+        <TabsList className="grid h-12 w-full grid-cols-4 rounded-xl border border-border/70 bg-muted p-1 sm:h-12 sm:rounded-2xl sm:p-1">
           {navigationItems.map((item) => (
             <TabsTrigger
               key={item.to}
