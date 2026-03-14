@@ -58,7 +58,7 @@ export function WeekPicker({
           <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-60" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-[min(92vw,24rem)] p-0">
+      <PopoverContent align="center" sideOffset={10} className="w-[min(92vw,24rem)] p-0">
         <Command>
           <CommandInput placeholder="Search week, month, or deliverable..." />
           <CommandList>

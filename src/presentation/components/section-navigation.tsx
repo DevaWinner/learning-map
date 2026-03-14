@@ -32,16 +32,16 @@ export function SectionNavigation() {
     '/overview';
 
   return (
-    <div className="mt-4 overflow-x-auto">
+    <div className="mx-auto mt-4 w-full max-w-md sm:max-w-none">
       <Tabs value={currentPath} onValueChange={(value) => void navigate(value)}>
-        <TabsList className="inline-flex h-10 w-max rounded-2xl border border-border/70 bg-background/75 p-1 shadow-sm backdrop-blur-sm">
+        <TabsList className="grid h-12 w-full grid-cols-4 rounded-xl border border-border/70 bg-muted/65 p-1 shadow-sm backdrop-blur-sm sm:inline-flex sm:h-12 sm:w-auto sm:rounded-2xl sm:p-1">
           {navigationItems.map((item) => (
             <TabsTrigger
               key={item.to}
               value={item.to}
-              className="rounded-xl px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] sm:text-sm"
+              className="min-w-0 rounded-lg px-2 py-2 text-sm font-semibold tracking-normal sm:rounded-xl sm:px-3 sm:py-2 sm:text-base sm:tracking-normal"
             >
-              {item.label}
+              <span className="truncate">{item.label}</span>
             </TabsTrigger>
           ))}
         </TabsList>
@@ -49,4 +49,3 @@ export function SectionNavigation() {
     </div>
   );
 }
-

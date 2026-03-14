@@ -25,9 +25,9 @@ export function WeeklySummaryCard({
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Report readiness
           </p>
-          <CardTitle className="text-2xl">Weekly summary</CardTitle>
+          <CardTitle className="text-xl">Weekly summary</CardTitle>
         </div>
-        <Button variant="default" size="lg" onClick={onExport} className="font-bold gap-2">
+        <Button variant="default" onClick={onExport} className="gap-2">
           <Download className="size-4" />
           Export Report
         </Button>
@@ -39,7 +39,7 @@ export function WeeklySummaryCard({
             <div className="text-xs font-bold uppercase tracking-[0.18em] text-purple-700">
               Planned vs actual
             </div>
-            <div className="mt-3 text-2xl font-bold text-purple-600">
+            <div className="mt-3 text-xl font-semibold text-purple-600">
               {summary.actualHours.toFixed(1)} / {summary.week.plannedHours}h
             </div>
           </div>
@@ -47,7 +47,7 @@ export function WeeklySummaryCard({
             <div className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
               Distinct tasks
             </div>
-            <div className="mt-3 text-2xl font-bold text-blue-600">
+            <div className="mt-3 text-xl font-semibold text-blue-600">
               {summary.uniqueTasks.length}
             </div>
           </div>
@@ -55,7 +55,7 @@ export function WeeklySummaryCard({
             <div className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
               Reported outcomes
             </div>
-            <div className="mt-3 text-2xl font-bold text-emerald-600">
+            <div className="mt-3 text-xl font-semibold text-emerald-600">
               {summary.outcomes.length}
             </div>
           </div>
@@ -110,4 +110,3 @@ export function WeeklySummaryCard({
     </Card>
   );
 }
-

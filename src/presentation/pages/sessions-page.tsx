@@ -21,7 +21,6 @@ export function SessionsPage({
   return (
     <section className="space-y-4 pt-4">
       <PageIntro
-        eyebrow="Sessions"
         title={`Log work for week ${week.weekNumber}`}
         description="Capture the actual study blocks you completed so the roadmap reflects execution, not intention."
       />
@@ -37,4 +36,3 @@ export function SessionsPage({
     </section>
   );
 }
-

@@ -90,7 +90,7 @@ export function WeeklyCheckpointCard({
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Weekly reporting
           </p>
-          <CardTitle className="text-2xl">Checkpoint</CardTitle>
+          <CardTitle className="text-xl">Checkpoint</CardTitle>
         </div>
       </CardHeader>
 
@@ -165,7 +165,7 @@ export function WeeklyCheckpointCard({
             />
           </div>
 
-          <Button type="submit" disabled={isSaving} className="w-full sm:w-auto font-bold text-base" size="lg">
+          <Button type="submit" disabled={isSaving} className="w-full sm:w-auto">
             {isSaving ? 'Saving…' : 'Save checkpoint'}
           </Button>
         </form>

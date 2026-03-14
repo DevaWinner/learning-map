@@ -25,7 +25,7 @@ export function SessionList({ sessions, onRemove }: SessionListProps) {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Execution trail
           </p>
-          <CardTitle className="text-2xl">Recent sessions</CardTitle>
+          <CardTitle className="text-xl">Recent sessions</CardTitle>
         </div>
       </CardHeader>
 
@@ -84,4 +84,3 @@ export function SessionList({ sessions, onRemove }: SessionListProps) {
     </Card>
   );
 }
-

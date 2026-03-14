@@ -90,7 +90,7 @@ export function SessionLogForm({ weekNumber, onSubmit }: SessionLogFormProps) {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Daily tracking
           </p>
-          <CardTitle className="text-2xl">Log a study session</CardTitle>
+          <CardTitle className="text-xl">Log a study session</CardTitle>
         </div>
       </CardHeader>
 
@@ -204,4 +204,3 @@ export function SessionLogForm({ weekNumber, onSubmit }: SessionLogFormProps) {
     </Card>
   );
 }
-

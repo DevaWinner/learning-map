@@ -19,7 +19,7 @@ export function RoadmapFocusCard({ week }: RoadmapFocusCardProps) {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Planned work
           </p>
-          <CardTitle className="text-2xl">Roadmap focus</CardTitle>
+          <CardTitle className="text-xl">Roadmap focus</CardTitle>
         </div>
       </CardHeader>
 

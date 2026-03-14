@@ -27,12 +27,12 @@ export function WeekOverviewCard({
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Current commitment
           </p>
-          <CardTitle className="text-3xl md:text-4xl">Week {week.weekNumber}</CardTitle>
+          <CardTitle className="text-2xl md:text-3xl">Week {week.weekNumber}</CardTitle>
           <p className="text-sm font-medium text-muted-foreground/90">
             {formatLongDate(week.startDate)} to {formatLongDate(week.endDate)}
           </p>
         </div>
-        <Badge variant="secondary" className="rounded-full px-4 py-2 text-sm font-bold">
+        <Badge variant="secondary" className="rounded-full px-3 py-1.5 text-xs font-semibold">
           {week.plannedHours}h target
         </Badge>
       </CardHeader>
@@ -40,7 +40,7 @@ export function WeekOverviewCard({
       <CardContent className="space-y-4">
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-lg border border-border/40 bg-gradient-to-br from-blue-50/70 to-background/80 p-5 shadow-sm transition-all hover:shadow-md">
-            <div className="text-3xl font-bold text-primary">
+            <div className="text-2xl font-semibold text-primary">
               {summary.actualHours.toFixed(1)}h
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
@@ -48,7 +48,7 @@ export function WeekOverviewCard({
             </div>
           </article>
           <article className="rounded-lg border border-border/40 bg-gradient-to-br from-orange-50/70 to-background/80 p-5 shadow-sm transition-all hover:shadow-md">
-            <div className="text-3xl font-bold text-amber-600">
+            <div className="text-2xl font-semibold text-amber-600">
               {summary.remainingHours.toFixed(1)}h
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
@@ -56,7 +56,7 @@ export function WeekOverviewCard({
             </div>
           </article>
           <article className="rounded-lg border border-border/40 bg-gradient-to-br from-emerald-50/70 to-background/80 p-5 shadow-sm transition-all hover:shadow-md">
-            <div className="text-3xl font-bold text-emerald-600">
+            <div className="text-2xl font-semibold text-emerald-600">
               {Math.round(summary.completionRate * 100)}%
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
@@ -64,7 +64,7 @@ export function WeekOverviewCard({
             </div>
           </article>
           <article className="rounded-lg border border-border/40 bg-gradient-to-br from-purple-50/70 to-background/80 p-5 shadow-sm transition-all hover:shadow-md">
-            <div className="text-lg font-bold text-purple-700">
+            <div className="text-base font-semibold text-purple-700">
               {deliverableStatusLabels[summary.checkpoint.deliverableStatus]}
             </div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
@@ -90,4 +90,3 @@ export function WeekOverviewCard({
     </Card>
   );
 }
-

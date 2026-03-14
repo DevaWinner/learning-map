@@ -15,15 +15,11 @@ export function ProjectsPage({
   return (
     <section className="space-y-4 pt-4">
       <PageIntro
-        eyebrow="Projects"
         title="Keep strategic work visible"
         description="This view separates long-horizon product thinking from the current week so the roadmap stays focused."
       />
 
-      <div className="grid gap-4">
-        <ProjectFocusBoard projects={projects} onSave={onSaveProject} />
-      </div>
+      <ProjectFocusBoard projects={projects} onSave={onSaveProject} />
     </section>
   );
 }
-

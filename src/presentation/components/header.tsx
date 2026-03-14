@@ -16,22 +16,22 @@ export function Header({
   return (
     <header>
       <Card className="overflow-hidden border-white/15 bg-[linear-gradient(135deg,rgba(20,40,32,0.98),rgba(24,80,50,0.95))] text-primary-foreground shadow-2xl">
-        <CardContent className="grid gap-6 p-6 md:grid-cols-[minmax(0,1fr)_20rem] md:items-end md:p-8">
-          <div className="space-y-3">
+        <CardContent className="space-y-6 p-6 md:p-8">
+          <div className="space-y-3 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/65">
               Local-first weekly execution system
             </p>
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
               Roadmap OS
             </h1>
-            <p className="max-w-2xl text-base leading-7 text-white/80 md:text-lg">
+            <p className="mx-auto max-w-2xl text-sm leading-6 text-white/80 md:text-base">
               Keep the 20-hour roadmap visible, log what you actually did, and
               export a weekly report before drift sets in.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/15 bg-white/12 p-4 backdrop-blur-lg shadow-lg">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-white/65">
+          <div className="mx-auto w-full max-w-md rounded-2xl border border-white/15 bg-white/12 p-4 backdrop-blur-lg shadow-lg">
+            <p className="mb-3 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-white/65">
               Viewing week
             </p>
             <WeekPicker
@@ -45,4 +45,3 @@ export function Header({
     </header>
   );
 }
-

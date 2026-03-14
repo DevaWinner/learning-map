@@ -19,7 +19,6 @@ export function OverviewPage({
   return (
     <section className="space-y-4 pt-4">
       <PageIntro
-        eyebrow="Overview"
         title={`Week ${week.weekNumber} at a glance`}
         description="Use this view to see the current commitment, planned roadmap work, and whether the week is on pace."
       />
@@ -38,4 +37,3 @@ export function OverviewPage({
     </section>
   );
 }
-

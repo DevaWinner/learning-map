@@ -25,7 +25,6 @@ export function ReportingPage({
   return (
     <section className="space-y-4 pt-4">
       <PageIntro
-        eyebrow="Reporting"
         title={`Close out week ${week.weekNumber} cleanly`}
         description="Track risk, blockers, next actions, and export a report that matches the actual week."
       />
@@ -48,4 +47,3 @@ export function ReportingPage({
     </section>
   );
 }
-

@@ -41,27 +41,11 @@ export function ProjectFocusBoard({
   onSave,
 }: ProjectFocusBoardProps) {
   return (
-    <Card className="shadow-lg">
-      <CardHeader>
-        <div className="space-y-2">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            Longer-horizon work
-          </p>
-          <CardTitle className="text-2xl">Project lanes</CardTitle>
-          <CardDescription className="text-base text-muted-foreground/90">
-            Track strategic product work separately from weekly schedule execution.
-          </CardDescription>
-        </div>
-      </CardHeader>
-
-      <CardContent>
-        <div className="grid gap-5 lg:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} onSave={onSave} />
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+    <div className="grid gap-4 lg:grid-cols-2">
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} onSave={onSave} />
+      ))}
+    </div>
   );
 }
 
@@ -109,19 +93,21 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
   }
 
   return (
-    <Card className="h-full shadow-md hover:shadow-lg transition-all border-border/50">
-      <CardHeader className="space-y-4">
-        <div className="space-y-2">
-          <CardTitle className="text-xl font-bold">{project.name}</CardTitle>
-          <CardDescription className="text-sm font-semibold text-primary">{project.tagline}</CardDescription>
+    <Card className="h-full shadow-lg">
+      <CardHeader className="space-y-2">
+        <div className="space-y-1.5">
+          <CardTitle className="text-base font-semibold">{project.name}</CardTitle>
+          <CardDescription className="text-sm">
+            {project.tagline}
+          </CardDescription>
         </div>
-        <p className="text-base leading-7 text-foreground/85 font-medium">
+        <p className="text-sm leading-6 text-foreground/80">
           {project.desiredOutcome}
         </p>
       </CardHeader>
-      <CardContent className="space-y-5">
-        <div className="space-y-3">
-          <Label className="font-bold text-foreground">Status</Label>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label className="text-sm font-medium text-foreground">Status</Label>
           <Select
             value={draft.status}
             onValueChange={(value) =>
@@ -131,7 +117,7 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
               }))
             }
           >
-            <SelectTrigger className="border-border/50 bg-background/80 font-medium">
+            <SelectTrigger className="border-border/50 bg-background/80">
               <SelectValue placeholder="Select project status" />
             </SelectTrigger>
             <SelectContent>
@@ -144,8 +130,8 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
           </Select>
         </div>
 
-        <div className="space-y-3">
-          <Label className="font-bold text-foreground">Notes</Label>
+        <div className="space-y-2">
+          <Label className="text-sm font-medium text-foreground">Notes</Label>
           <Textarea
             rows={6}
             value={draft.notes}
@@ -155,15 +141,14 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
                 notes: event.target.value,
               }))
             }
-            className="border-border/50 bg-background/80 font-medium resize-none"
+            className="resize-none border-border/50 bg-background/80"
           />
         </div>
 
         <Button
-          variant="secondary"
           onClick={() => void handleSave()}
           disabled={isSaving}
-          className="w-full font-bold"
+          className="w-full sm:w-auto"
         >
           {isSaving ? 'Saving…' : 'Save project'}
         </Button>
@@ -171,4 +156,3 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
     </Card>
   );
 }
-
