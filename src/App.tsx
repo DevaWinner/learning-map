@@ -33,7 +33,7 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-8">
+      <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 sm:py-8">
         <Card>
           <CardContent className="flex items-center gap-3 p-8">
             <div className="size-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -48,7 +48,7 @@ export default function App() {
 
   if (error || !selectedWeek || !summary) {
     return (
-      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-8">
+      <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 sm:py-8">
         <Card>
           <CardContent className="p-8 text-sm text-destructive">
             {error || "The selected roadmap week could not be loaded."}
@@ -61,7 +61,7 @@ export default function App() {
   return (
     <>
       <SectionNavigation />
-      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-8">
+      <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 sm:py-8">
         <Header
           weeks={weeks}
           selectedWeekNumber={currentWeekNumber}
@@ -101,9 +101,7 @@ export default function App() {
               <ReportingPage
                 week={selectedWeek}
                 checkpoint={checkpoint}
-                summary={summary}
                 onSaveCheckpoint={saveCheckpoint}
-                onExport={exportWeeklyReport}
               />
             }
           />

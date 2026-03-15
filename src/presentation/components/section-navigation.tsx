@@ -31,18 +31,18 @@ export function SectionNavigation() {
     <>
       {/* Fixed nav bar pinned to viewport top — never transitions, zero jitter */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-background/95 backdrop-blur-xl">
-        <div className="mx-auto w-full max-w-6xl px-4 py-2 sm:px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 py-2 sm:px-6">
           <Tabs
             value={currentPath}
             onValueChange={(value) => void navigate(value)}
             className="block w-full"
           >
-            <TabsList className="grid h-11 w-full grid-cols-4 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
+            <TabsList className="grid h-auto w-full grid-cols-4 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
               {navigationItems.map((item) => (
                 <TabsTrigger
                   key={item.to}
                   value={item.to}
-                  className="min-w-0 rounded-2xl px-2 py-2 text-sm font-semibold sm:px-3 sm:py-2 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
+                  className="flex min-w-0 items-center justify-center rounded-2xl px-2 py-1.5 text-center text-sm font-semibold sm:px-3 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
                 >
                   <span className="truncate">{item.label}</span>
                 </TabsTrigger>
