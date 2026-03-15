@@ -9,6 +9,7 @@ import { FocusDetailPage } from "@/presentation/pages/focus-detail-page";
 import { ProjectsPage } from "@/presentation/pages/projects-page";
 import { ReportingPage } from "@/presentation/pages/reporting-page";
 import { SessionsPage } from "@/presentation/pages/sessions-page";
+import { InstallAppButton } from "@/presentation/components/install-app-button";
 
 const appContext = createAppContext();
 
@@ -113,6 +114,7 @@ export default function App() {
           />
           <Route path="*" element={<Navigate to="/overview" replace />} />
         </Routes>
+        <InstallAppButton />
       </main>
     </>
   );

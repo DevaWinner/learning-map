@@ -42,7 +42,7 @@ export function SectionNavigation() {
                 <TabsTrigger
                   key={item.to}
                   value={item.to}
-                  className="flex min-w-0 items-center justify-center rounded-md px-2 py-1.5 text-center text-sm font-semibold sm:px-3 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
+                  className="flex min-w-0 h-12 sm:h-11 items-center justify-center rounded-md px-2 text-center text-sm font-semibold sm:px-3 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
                 >
                   <span className="truncate">{item.label}</span>
                 </TabsTrigger>
