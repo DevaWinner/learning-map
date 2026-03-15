@@ -33,7 +33,7 @@ export function WeekOverviewCard({ week, summary }: WeekOverviewCardProps) {
         </div>
         <Badge
           variant="secondary"
-          className="rounded-full px-3 py-1.5 text-xs font-semibold"
+          className="w-fit rounded-md px-3 py-1.5 text-xs font-semibold"
         >
           {week.plannedHours}h target
         </Badge>
