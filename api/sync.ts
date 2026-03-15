@@ -150,14 +150,32 @@ export default async function handler(req: Request) {
 
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   } catch (err: any) {
-    console.error("NeonDB Sync Error:", err);
+    console.error("NeonDB Sync Error Details:", {
+      message: err.message,
+      name: err.name,
+      stack: err.stack,
+      cause: err.cause,
+    });
+
+    // Send back the exact error message so the PWA client can log it in the console
     return new Response(
-      JSON.stringify({ error: "Internal Server Error", details: err.message }),
+      JSON.stringify({
+        error: "Internal Server Error",
+        details: err.message,
+        name: err.name,
+      }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
       },
     );
   }
