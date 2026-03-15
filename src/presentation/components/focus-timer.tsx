@@ -24,9 +24,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/presentation/components/ui/select";
+import type { RoadmapFocusOption } from "@/domain/services/get-week-roadmap-focus-options";
 
 interface FocusTimerProps {
+  focusOptions: RoadmapFocusOption[];
+  selectedFocusId: RoadmapFocusOption["id"];
+  onSelectFocus: (focusId: RoadmapFocusOption["id"]) => void;
   onComplete: (hours: number) => void;
+}
+
+function roundHours(hours: number) {
+  return Number(hours.toFixed(2));
 }
 
 interface TimerSoundSettings {
@@ -62,7 +70,12 @@ function loadTimerSoundSettings(): TimerSoundSettings {
   }
 }
 
-export function FocusTimer({ onComplete }: FocusTimerProps) {
+export function FocusTimer({
+  focusOptions,
+  selectedFocusId,
+  onSelectFocus,
+  onComplete,
+}: FocusTimerProps) {
   const [targetMinutes, setTargetMinutes] = useState(60); // Default to 1 hour
   const [secondsLeft, setSecondsLeft] = useState(60 * 60);
   const [isActive, setIsActive] = useState(false);
@@ -100,9 +113,7 @@ export function FocusTimer({ onComplete }: FocusTimerProps) {
       if (soundSettings.completionEnabled) {
         playCompletion();
       }
-      // Floor the target minutes into hours and round to nearest 0.5
-      const hours = Math.max(0.5, Math.round((targetMinutes / 60) * 2) / 2);
-      onComplete(hours);
+      onComplete(roundHours(targetMinutes / 60));
     }
 
     return () => {
@@ -133,15 +144,10 @@ export function FocusTimer({ onComplete }: FocusTimerProps) {
   };
   const handlePause = () => setIsActive(false);
 
-  const handleStop = () => {
+  const handleFinish = () => {
     setIsActive(false);
-    if (totalElapsedSeconds >= 60) {
-      // Allow early finish if they ran it for at least a minute
-      const hours = Math.max(
-        0.5,
-        Math.round((totalElapsedSeconds / 3600) * 2) / 2,
-      );
-      onComplete(hours);
+    if (totalElapsedSeconds > 0) {
+      onComplete(roundHours(totalElapsedSeconds / 3600));
     } else {
       handleReset();
     }
@@ -260,23 +266,51 @@ export function FocusTimer({ onComplete }: FocusTimerProps) {
         </div>
 
         {!isActive && totalElapsedSeconds === 0 && (
-          <div className="w-52">
-            <Select
-              value={targetMinutes.toString()}
-              onValueChange={handleDurationChange}
-            >
-              <SelectTrigger className="h-11">
-                <SelectValue placeholder="Select duration" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="15">15 Minutes</SelectItem>
-                <SelectItem value="25">25 Minutes (Pomodoro)</SelectItem>
-                <SelectItem value="45">45 Minutes</SelectItem>
-                <SelectItem value="60">1 Hour focus</SelectItem>
-                <SelectItem value="90">90 Minutes deep work</SelectItem>
-                <SelectItem value="120">2 Hours deep work</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className="grid w-full gap-4 md:grid-cols-[13rem_minmax(0,1fr)]">
+            <div className="w-full">
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                Duration
+              </div>
+              <Select
+                value={targetMinutes.toString()}
+                onValueChange={handleDurationChange}
+              >
+                <SelectTrigger className="h-11">
+                  <SelectValue placeholder="Select duration" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="15">15 Minutes</SelectItem>
+                  <SelectItem value="25">25 Minutes (Pomodoro)</SelectItem>
+                  <SelectItem value="45">45 Minutes</SelectItem>
+                  <SelectItem value="60">1 Hour focus</SelectItem>
+                  <SelectItem value="90">90 Minutes deep work</SelectItem>
+                  <SelectItem value="120">2 Hours deep work</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="w-full min-w-0">
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                Working on
+              </div>
+              <Select value={selectedFocusId} onValueChange={onSelectFocus}>
+                <SelectTrigger className="h-11">
+                  <SelectValue placeholder="Select roadmap focus" />
+                </SelectTrigger>
+                <SelectContent>
+                  {focusOptions.map((option) => (
+                    <SelectItem key={option.id} value={option.id}>
+                      <div className="min-w-0">
+                        <div className="font-semibold">{option.label}</div>
+                        <div className="truncate text-xs text-muted-foreground">
+                          {option.detail}
+                        </div>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         )}
 
@@ -327,10 +361,10 @@ export function FocusTimer({ onComplete }: FocusTimerProps) {
           <Button
             size="lg"
             variant="outline"
-            onClick={totalElapsedSeconds > 0 ? handleStop : handleReset}
+            onClick={totalElapsedSeconds > 0 ? handleFinish : handleReset}
             className="h-14 w-36 text-base font-bold"
           >
-            {totalElapsedSeconds > 0 && !isActive ? (
+            {totalElapsedSeconds > 0 ? (
               <>
                 <Square className="mr-2 size-4 fill-current" />
                 Finish
