@@ -37,12 +37,12 @@ export function SectionNavigation() {
             onValueChange={(value) => void navigate(value)}
             className="block w-full"
           >
-            <TabsList className="grid h-auto w-full grid-cols-4 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
+            <TabsList className="grid h-auto w-full grid-cols-4 rounded-md border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
               {navigationItems.map((item) => (
                 <TabsTrigger
                   key={item.to}
                   value={item.to}
-                  className="flex min-w-0 items-center justify-center rounded-2xl px-2 py-1.5 text-center text-sm font-semibold sm:px-3 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
+                  className="flex min-w-0 items-center justify-center rounded-md px-2 py-1.5 text-center text-sm font-semibold sm:px-3 sm:text-base data-[state=active]:bg-primary/15 data-[state=active]:text-primary data-[state=active]:shadow-[0_0_12px_hsl(160_84%_39%/0.15)]"
                 >
                   <span className="truncate">{item.label}</span>
                 </TabsTrigger>

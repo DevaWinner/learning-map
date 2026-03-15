@@ -46,7 +46,7 @@ export function WeekPicker({
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "h-10 w-full justify-between rounded-xl text-left text-foreground",
+            "h-10 w-full justify-between rounded-md text-left text-foreground",
             className,
           )}
         >
