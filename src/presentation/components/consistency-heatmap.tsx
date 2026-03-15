@@ -73,7 +73,7 @@ export function ConsistencyHeatmap({ sessions }: ConsistencyHeatmapProps) {
   const heatmapData = useMemo(() => generateHeatmapDays(sessions), [sessions]);
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <CardHeader className="pb-4">
         <div className="space-y-2">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -82,42 +82,32 @@ export function ConsistencyHeatmap({ sessions }: ConsistencyHeatmapProps) {
           <CardTitle className="text-xl">180-Day Heatmap</CardTitle>
         </div>
       </CardHeader>
-      <CardContent>
-        {/* Scrollable container for mobile */}
-        <div className="overflow-x-auto pb-2">
-          {/* Ensure minimum width so it scrolls rather than squishes */}
-          <div className="min-w-[700px]">
-            <div
-              className="grid gap-[4px]"
-              style={{
-                gridTemplateRows: "repeat(7, 1fr)",
-                gridAutoFlow: "column",
-                gridAutoColumns: "minmax(0, 1fr)",
-              }}
-            >
-              {heatmapData.map((day) => (
-                <div
-                  key={day.dateStr}
-                  title={
-                    day.intensity === -1
-                      ? undefined
-                      : `${day.hours > 0 ? day.hours.toFixed(1) + "h" : "No hours"} on ${day.date.toDateString()}`
-                  }
-                  className={cn(
-                    "aspect-square rounded-[3px] transition-all",
-                    day.intensity === -1 && "opacity-0",
-                    day.intensity === 0 && "bg-white/[0.04]",
-                    day.intensity === 1 && "bg-emerald-500/30",
-                    day.intensity === 2 && "bg-emerald-500/50",
-                    day.intensity === 3 && "bg-emerald-500/70",
-                    day.intensity === 4 &&
-                      "bg-emerald-400 shadow-[0_0_8px_hsl(152_69%_31%/0.3)]",
-                    day.intensity >= 0 &&
-                      "hover:border hover:border-white/20 cursor-help",
-                  )}
-                />
-              ))}
-            </div>
+      <CardContent className="overflow-hidden">
+        <div className="max-w-full overflow-x-auto overscroll-x-contain pb-2">
+          <div
+            className="inline-grid gap-1 [grid-auto-columns:0.65rem] [grid-auto-flow:column] [grid-template-rows:repeat(7,_0.65rem)] sm:[grid-auto-columns:0.8rem] sm:[grid-template-rows:repeat(7,_0.8rem)]"
+          >
+            {heatmapData.map((day) => (
+              <div
+                key={day.dateStr}
+                title={
+                  day.intensity === -1
+                    ? undefined
+                    : `${day.hours > 0 ? day.hours.toFixed(1) + "h" : "No hours"} on ${day.date.toDateString()}`
+                }
+                className={cn(
+                  "rounded-[3px] transition-colors",
+                  day.intensity === -1 && "opacity-0",
+                  day.intensity === 0 && "bg-white/[0.04]",
+                  day.intensity === 1 && "bg-emerald-500/30",
+                  day.intensity === 2 && "bg-emerald-500/50",
+                  day.intensity === 3 && "bg-emerald-500/70",
+                  day.intensity === 4 && "bg-emerald-400",
+                  day.intensity >= 0 &&
+                    "cursor-help hover:border hover:border-white/20",
+                )}
+              />
+            ))}
           </div>
         </div>
       </CardContent>

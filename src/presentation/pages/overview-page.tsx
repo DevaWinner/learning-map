@@ -21,19 +21,19 @@ export function OverviewPage({
   onExport,
 }: OverviewPageProps) {
   return (
-    <section className="space-y-4 pt-4">
+    <section className="min-w-0 space-y-4 pt-4">
       <PageIntro
         title={`Week ${week.weekNumber} at a glance`}
         description="Use this view to see the current commitment, planned roadmap work, and whether the week is on pace."
       />
 
       <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
-        <div className="flex flex-col gap-4">
+        <div className="min-w-0 flex flex-col gap-4">
           <WeekOverviewCard week={week} summary={summary} />
           <RoadmapFocusCard week={week} />
         </div>
-        <div>
-          <div className="flex flex-col gap-4">
+        <div className="min-w-0">
+          <div className="min-w-0 flex flex-col gap-4">
             <ConsistencyHeatmap sessions={allSessions} />
             <WeeklySummaryCard summary={summary} onExport={onExport} />
           </div>

@@ -94,7 +94,7 @@ export function PublicProfilePage() {
         </div>
       </header>
 
-      <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both">
+      <section className="min-w-0 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both">
         <ConsistencyHeatmap sessions={sessions} />
       </section>
 
