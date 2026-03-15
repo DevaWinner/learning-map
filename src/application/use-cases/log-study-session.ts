@@ -1,8 +1,5 @@
-import type { StudySessionRepository } from '@/application/ports/study-session-repository';
-import type {
-  FocusArea,
-  StudySession,
-} from '@/domain/entities/study-session';
+import type { StudySessionRepository } from "@/application/ports/study-session-repository";
+import type { FocusArea, StudySession } from "@/domain/entities/study-session";
 
 export interface LogStudySessionInput {
   weekNumber: number;
@@ -28,9 +25,9 @@ export async function logStudySession(
     notes: input.notes.trim(),
     outcome: input.outcome.trim(),
     createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   };
 
   await studySessionRepository.save(session);
   return session;
 }
-
