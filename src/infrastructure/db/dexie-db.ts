@@ -32,6 +32,14 @@ export class RoadmapDatabase extends Dexie {
       projectFocuses: "id",
       syncQueue: "id, timestamp",
     });
+
+    // Version 2 adds an index on recordId for the syncQueue since SyncManager queries by it
+    this.version(2).stores({
+      studySessions: "id, weekNumber",
+      weeklyCheckpoints: "weekNumber",
+      projectFocuses: "id",
+      syncQueue: "id, timestamp, recordId",
+    });
   }
 }
 
