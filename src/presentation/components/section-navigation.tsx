@@ -11,6 +11,10 @@ const navigationItems = [
     label: "Sessions",
   },
   {
+    to: "/timer",
+    label: "Timer",
+  },
+  {
     to: "/reporting",
     label: "Reporting",
   },
@@ -37,7 +41,7 @@ export function SectionNavigation() {
             onValueChange={(value) => void navigate(value)}
             className="block w-full"
           >
-            <TabsList className="grid h-auto w-full grid-cols-4 rounded-md border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
+            <TabsList className="grid h-auto w-full grid-cols-5 rounded-md border border-white/[0.06] bg-white/[0.03] p-1 backdrop-blur-2xl">
               {navigationItems.map((item) => (
                 <TabsTrigger
                   key={item.to}

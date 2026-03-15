@@ -24,6 +24,7 @@ import { Textarea } from "@/presentation/components/ui/textarea";
 
 interface SessionLogFormProps {
   weekNumber: number;
+  initialHours?: number;
   onSubmit: (input: {
     weekNumber: number;
     date: string;
@@ -37,7 +38,11 @@ interface SessionLogFormProps {
 
 const focusAreas = Object.keys(focusAreaLabels) as FocusArea[];
 
-export function SessionLogForm({ weekNumber, onSubmit }: SessionLogFormProps) {
+export function SessionLogForm({
+  weekNumber,
+  initialHours,
+  onSubmit,
+}: SessionLogFormProps) {
   const ids = {
     date: useId(),
     hours: useId(),
@@ -49,7 +54,7 @@ export function SessionLogForm({ weekNumber, onSubmit }: SessionLogFormProps) {
 
   const [form, setForm] = useState({
     date: toIsoDate(new Date()),
-    hours: 1.5,
+    hours: initialHours ?? 1.5,
     focusArea: "ml" as FocusArea,
     task: "",
     notes: "",

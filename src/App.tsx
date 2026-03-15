@@ -9,16 +9,28 @@ import { FocusDetailPage } from "@/presentation/pages/focus-detail-page";
 import { ProjectsPage } from "@/presentation/pages/projects-page";
 import { ReportingPage } from "@/presentation/pages/reporting-page";
 import { SessionsPage } from "@/presentation/pages/sessions-page";
+import { TimerPage } from "@/presentation/pages/timer-page";
+import { PublicProfilePage } from "@/presentation/pages/public-profile-page";
 import { InstallAppButton } from "@/presentation/components/install-app-button";
 
 const appContext = createAppContext();
 
 export default function App() {
+  return (
+    <Routes>
+      <Route path="/public" element={<PublicProfilePage />} />
+      <Route path="/*" element={<AuthenticatedApp />} />
+    </Routes>
+  );
+}
+
+function AuthenticatedApp() {
   const {
     weeks,
     selectedWeek,
     currentWeekNumber,
     sessions,
+    allSessions,
     checkpoint,
     projects,
     summary,
@@ -77,6 +89,7 @@ export default function App() {
               <OverviewPage
                 week={selectedWeek}
                 summary={summary}
+                allSessions={allSessions}
                 onExport={exportWeeklyReport}
               />
             }
@@ -104,6 +117,12 @@ export default function App() {
                 checkpoint={checkpoint}
                 onSaveCheckpoint={saveCheckpoint}
               />
+            }
+          />
+          <Route
+            path="/timer"
+            element={
+              <TimerPage week={selectedWeek} onAddSession={addSession} />
             }
           />
           <Route

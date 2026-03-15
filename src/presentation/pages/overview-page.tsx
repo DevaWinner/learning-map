@@ -1,17 +1,25 @@
 import type { StudyWeek } from "@/domain/entities/study-week";
 import type { WeeklySummary } from "@/domain/entities/weekly-summary";
+import type { StudySession } from "@/domain/entities/study-session";
 import { PageIntro } from "@/presentation/components/page-intro";
 import { RoadmapFocusCard } from "@/presentation/components/roadmap-focus-card";
 import { WeekOverviewCard } from "@/presentation/components/week-overview-card";
 import { WeeklySummaryCard } from "@/presentation/components/weekly-summary-card";
+import { ConsistencyHeatmap } from "@/presentation/components/consistency-heatmap";
 
 interface OverviewPageProps {
   week: StudyWeek;
   summary: WeeklySummary;
+  allSessions: StudySession[];
   onExport: () => void;
 }
 
-export function OverviewPage({ week, summary, onExport }: OverviewPageProps) {
+export function OverviewPage({
+  week,
+  summary,
+  allSessions,
+  onExport,
+}: OverviewPageProps) {
   return (
     <section className="space-y-4 pt-4">
       <PageIntro
@@ -25,7 +33,10 @@ export function OverviewPage({ week, summary, onExport }: OverviewPageProps) {
           <RoadmapFocusCard week={week} />
         </div>
         <div>
-          <WeeklySummaryCard summary={summary} onExport={onExport} />
+          <div className="flex flex-col gap-4">
+            <ConsistencyHeatmap sessions={allSessions} />
+            <WeeklySummaryCard summary={summary} onExport={onExport} />
+          </div>
         </div>
       </div>
     </section>

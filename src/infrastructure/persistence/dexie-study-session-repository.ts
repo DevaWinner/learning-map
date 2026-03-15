@@ -3,6 +3,10 @@ import type { StudySession } from "@/domain/entities/study-session";
 import { db } from "@/infrastructure/db/dexie-db";
 
 export class DexieStudySessionRepository implements StudySessionRepository {
+  async listAll(): Promise<StudySession[]> {
+    return await db.studySessions.toArray();
+  }
+
   async listByWeek(weekNumber: number): Promise<StudySession[]> {
     return await db.studySessions
       .where("weekNumber")
