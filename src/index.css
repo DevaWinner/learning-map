@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 48 55% 98%;
-  --foreground: 149 32% 11%;
-  --card: 0 0% 100%;
-  --card-foreground: 149 32% 11%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 149 32% 11%;
-  --primary: 143 47% 28%;
-  --primary-foreground: 60 9% 98%;
-  --secondary: 43 100% 89%;
-  --secondary-foreground: 149 32% 11%;
-  --muted: 90 18% 88%;
-  --muted-foreground: 147 8% 42%;
-  --accent: 42 96% 84%;
-  --accent-foreground: 149 32% 11%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 60 9% 98%;
-  --border: 140 12% 80%;
-  --input: 140 12% 80%;
-  --ring: 143 47% 28%;
+  --background: 220 16% 8%;
+  --foreground: 210 20% 92%;
+  --card: 220 14% 11%;
+  --card-foreground: 210 20% 92%;
+  --popover: 220 16% 10%;
+  --popover-foreground: 210 20% 92%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 220 16% 8%;
+  --secondary: 38 92% 50%;
+  --secondary-foreground: 220 16% 8%;
+  --muted: 220 12% 16%;
+  --muted-foreground: 215 14% 55%;
+  --accent: 220 12% 14%;
+  --accent-foreground: 210 20% 92%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 220 10% 16%;
+  --input: 220 10% 18%;
+  --ring: 160 84% 39%;
   --radius: 1rem;
 }
 
@@ -57,16 +57,22 @@
     @apply border-border outline-ring/50;
   }
 
-  html {
-    @apply scroll-smooth;
-  }
-
   body {
     @apply min-h-screen bg-background text-foreground antialiased;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
     background:
-      radial-gradient(circle at top left, hsl(42 100% 82% / 0.55), transparent 32%),
-      radial-gradient(circle at right center, hsl(140 37% 55% / 0.14), transparent 24%),
-      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(102 22% 95%) 100%);
+      radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        hsl(160 84% 39% / 0.08),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 100% 0%,
+        hsl(38 92% 50% / 0.04),
+        transparent
+      ),
+      hsl(var(--background));
+    background-attachment: fixed;
   }
 
   #root {
@@ -78,6 +84,6 @@
   select,
   textarea {
     @apply text-sm;
+    font-family: inherit;
   }
 }
-

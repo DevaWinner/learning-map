@@ -8,5 +8,6 @@ export interface StudyWeek {
   math: string;
   deliverable: string;
   plannedHours: number;
+  phase: string;
+  timeSplit: string;
 }
-

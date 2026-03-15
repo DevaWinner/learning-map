@@ -1,25 +1,25 @@
-import { useEffect, useId, useState, type FormEvent } from 'react';
+import { useEffect, useId, useState, type FormEvent } from "react";
 import {
   deliverableStatusLabels,
   type DeliverableStatus,
   type WeeklyCheckpoint,
-} from '@/domain/entities/weekly-checkpoint';
-import { Button } from '@/presentation/components/ui/button';
+} from "@/domain/entities/weekly-checkpoint";
+import { Button } from "@/presentation/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@/presentation/components/ui/card';
-import { Label } from '@/presentation/components/ui/label';
+} from "@/presentation/components/ui/card";
+import { Label } from "@/presentation/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/presentation/components/ui/select';
-import { Textarea } from '@/presentation/components/ui/textarea';
+} from "@/presentation/components/ui/select";
+import { Textarea } from "@/presentation/components/ui/textarea";
 
 interface WeeklyCheckpointCardProps {
   weekNumber: number;
@@ -50,19 +50,19 @@ export function WeeklyCheckpointCard({
   };
 
   const [form, setForm] = useState({
-    deliverableStatus: 'not-started' as DeliverableStatus,
-    blockers: '',
-    nextAction: '',
-    summaryNote: '',
+    deliverableStatus: "not-started" as DeliverableStatus,
+    blockers: "",
+    nextAction: "",
+    summaryNote: "",
   });
   const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     setForm({
-      deliverableStatus: checkpoint?.deliverableStatus ?? 'not-started',
-      blockers: checkpoint?.blockers ?? '',
-      nextAction: checkpoint?.nextAction ?? '',
-      summaryNote: checkpoint?.summaryNote ?? '',
+      deliverableStatus: checkpoint?.deliverableStatus ?? "not-started",
+      blockers: checkpoint?.blockers ?? "",
+      nextAction: checkpoint?.nextAction ?? "",
+      summaryNote: checkpoint?.summaryNote ?? "",
     });
   }, [checkpoint]);
 
@@ -84,10 +84,10 @@ export function WeeklyCheckpointCard({
   }
 
   return (
-    <Card className="shadow-lg">
+    <Card>
       <CardHeader>
         <div className="space-y-2">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Weekly reporting
           </p>
           <CardTitle className="text-xl">Checkpoint</CardTitle>
@@ -96,8 +96,8 @@ export function WeeklyCheckpointCard({
 
       <CardContent>
         <form className="space-y-5" onSubmit={handleSubmit}>
-          <div className="space-y-3">
-            <Label htmlFor={ids.status} className="font-semibold text-foreground">Deliverable status</Label>
+          <div className="space-y-2.5">
+            <Label htmlFor={ids.status}>Deliverable status</Label>
             <Select
               value={form.deliverableStatus}
               onValueChange={(value) =>
@@ -107,7 +107,7 @@ export function WeeklyCheckpointCard({
                 }))
               }
             >
-              <SelectTrigger id={ids.status} className="border-border/50 bg-background/80 font-medium">
+              <SelectTrigger id={ids.status}>
                 <SelectValue placeholder="Select status" />
               </SelectTrigger>
               <SelectContent>
@@ -120,36 +120,42 @@ export function WeeklyCheckpointCard({
             </Select>
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor={ids.blockers} className="font-semibold text-foreground">Blockers</Label>
+          <div className="space-y-2.5">
+            <Label htmlFor={ids.blockers}>Blockers</Label>
             <Textarea
               id={ids.blockers}
               rows={3}
               placeholder="What is slowing this week down?"
               value={form.blockers}
               onChange={(event) =>
-                setForm((current) => ({ ...current, blockers: event.target.value }))
+                setForm((current) => ({
+                  ...current,
+                  blockers: event.target.value,
+                }))
               }
-              className="border-border/50 bg-background/80 font-medium resize-none"
+              className="resize-none"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor={ids.action} className="font-semibold text-foreground">Next action</Label>
+          <div className="space-y-2.5">
+            <Label htmlFor={ids.action}>Next action</Label>
             <Textarea
               id={ids.action}
               rows={3}
               placeholder="What is the next concrete move?"
               value={form.nextAction}
               onChange={(event) =>
-                setForm((current) => ({ ...current, nextAction: event.target.value }))
+                setForm((current) => ({
+                  ...current,
+                  nextAction: event.target.value,
+                }))
               }
-              className="border-border/50 bg-background/80 font-medium resize-none"
+              className="resize-none"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor={ids.summary} className="font-semibold text-foreground">Weekly note</Label>
+          <div className="space-y-2.5">
+            <Label htmlFor={ids.summary}>Weekly note</Label>
             <Textarea
               id={ids.summary}
               rows={4}
@@ -161,12 +167,16 @@ export function WeeklyCheckpointCard({
                   summaryNote: event.target.value,
                 }))
               }
-              className="border-border/50 bg-background/80 font-medium resize-none"
+              className="resize-none"
             />
           </div>
 
-          <Button type="submit" disabled={isSaving} className="w-full sm:w-auto">
-            {isSaving ? 'Saving…' : 'Save checkpoint'}
+          <Button
+            type="submit"
+            disabled={isSaving}
+            className="w-full sm:w-auto"
+          >
+            {isSaving ? "Saving…" : "Save checkpoint"}
           </Button>
         </form>
       </CardContent>

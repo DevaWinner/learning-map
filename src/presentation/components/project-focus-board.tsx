@@ -1,26 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import type {
   ProjectFocus,
   ProjectStatus,
-} from '@/domain/entities/project-focus';
-import { projectStatusLabels } from '@/domain/entities/project-focus';
-import { Button } from '@/presentation/components/ui/button';
+} from "@/domain/entities/project-focus";
+import { projectStatusLabels } from "@/domain/entities/project-focus";
+import { Button } from "@/presentation/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/presentation/components/ui/card';
-import { Label } from '@/presentation/components/ui/label';
+} from "@/presentation/components/ui/card";
+import { Label } from "@/presentation/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/presentation/components/ui/select';
-import { Textarea } from '@/presentation/components/ui/textarea';
+} from "@/presentation/components/ui/select";
+import { Textarea } from "@/presentation/components/ui/textarea";
 
 interface ProjectFocusBoardProps {
   projects: ProjectFocus[];
@@ -93,21 +93,23 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
   }
 
   return (
-    <Card className="h-full shadow-lg">
+    <Card className="h-full">
       <CardHeader className="space-y-2">
         <div className="space-y-1.5">
-          <CardTitle className="text-base font-semibold">{project.name}</CardTitle>
+          <CardTitle className="text-base font-semibold">
+            {project.name}
+          </CardTitle>
           <CardDescription className="text-sm">
             {project.tagline}
           </CardDescription>
         </div>
-        <p className="text-sm leading-6 text-foreground/80">
+        <p className="text-sm leading-6 text-foreground/70">
           {project.desiredOutcome}
         </p>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Status</Label>
+        <div className="space-y-2.5">
+          <Label className="text-sm font-medium">Status</Label>
           <Select
             value={draft.status}
             onValueChange={(value) =>
@@ -117,7 +119,7 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
               }))
             }
           >
-            <SelectTrigger className="border-border/50 bg-background/80">
+            <SelectTrigger>
               <SelectValue placeholder="Select project status" />
             </SelectTrigger>
             <SelectContent>
@@ -130,8 +132,8 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Notes</Label>
+        <div className="space-y-2.5">
+          <Label className="text-sm font-medium">Notes</Label>
           <Textarea
             rows={6}
             value={draft.notes}
@@ -141,7 +143,7 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
                 notes: event.target.value,
               }))
             }
-            className="resize-none border-border/50 bg-background/80"
+            className="resize-none"
           />
         </div>
 
@@ -150,7 +152,7 @@ function ProjectCard({ project, onSave }: ProjectCardProps) {
           disabled={isSaving}
           className="w-full sm:w-auto"
         >
-          {isSaving ? 'Saving…' : 'Save project'}
+          {isSaving ? "Saving…" : "Save project"}
         </Button>
       </CardContent>
     </Card>

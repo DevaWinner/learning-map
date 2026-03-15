@@ -1,30 +1,34 @@
-import * as React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring/50 focus:ring-offset-2',
+  "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring/40 focus:ring-offset-2",
   {
     variants: {
       variant: {
-        default: 'border-primary/30 bg-primary/15 text-primary font-bold',
-        secondary: 'border-secondary/40 bg-secondary/25 text-secondary-foreground font-bold',
-        outline: 'border-border/70 bg-background/80 text-foreground font-semibold',
+        default: "border border-primary/20 bg-primary/10 text-primary",
+        secondary: "border border-secondary/20 bg-secondary/10 text-secondary",
+        destructive:
+          "border border-destructive/20 bg-destructive/10 text-destructive",
+        outline: "border border-white/10 text-muted-foreground",
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: "default",
     },
   },
 );
 
-function Badge({
-  className,
-  variant,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants>) {
-  return <div className={cn(badgeVariants({ variant }), className)} {...props} />;
+interface BadgeProps
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
 }
 
 export { Badge, badgeVariants };
-

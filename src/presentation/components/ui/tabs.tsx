@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { cn } from "@/lib/utils";
 
 const Tabs = TabsPrimitive.Root;
 
@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      'inline-flex h-11 items-center justify-center rounded-lg bg-muted/80 p-1 text-muted-foreground',
+      "inline-flex h-11 items-center justify-center rounded-xl bg-white/[0.04] p-1 text-muted-foreground border border-white/[0.06] backdrop-blur-xl",
       className,
     )}
     {...props}
@@ -26,7 +26,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition-[background-color,color,border-color] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border data-[state=active]:border-border/70 data-[state=active]:bg-background data-[state=active]:text-foreground',
+      "inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white/[0.08] data-[state=active]:text-foreground data-[state=active]:shadow-sm cursor-pointer",
       className,
     )}
     {...props}
@@ -40,7 +40,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn('mt-2 focus-visible:outline-none', className)}
+    className={cn("mt-2 focus-visible:outline-none", className)}
     {...props}
   />
 ));

@@ -1,16 +1,16 @@
 import {
   focusAreaLabels,
   type StudySession,
-} from '@/domain/entities/study-session';
-import { Badge } from '@/presentation/components/ui/badge';
-import { Button } from '@/presentation/components/ui/button';
+} from "@/domain/entities/study-session";
+import { Badge } from "@/presentation/components/ui/badge";
+import { Button } from "@/presentation/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@/presentation/components/ui/card';
-import { ScrollArea } from '@/presentation/components/ui/scroll-area';
+} from "@/presentation/components/ui/card";
+import { ScrollArea } from "@/presentation/components/ui/scroll-area";
 
 interface SessionListProps {
   sessions: StudySession[];
@@ -19,10 +19,10 @@ interface SessionListProps {
 
 export function SessionList({ sessions, onRemove }: SessionListProps) {
   return (
-    <Card className="shadow-lg">
+    <Card>
       <CardHeader>
         <div className="space-y-2">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Execution trail
           </p>
           <CardTitle className="text-xl">Recent sessions</CardTitle>
@@ -32,8 +32,8 @@ export function SessionList({ sessions, onRemove }: SessionListProps) {
       <CardContent>
         {sessions.length === 0 ? (
           <p className="text-sm text-muted-foreground leading-relaxed">
-            No study sessions recorded for this week yet. Start with one concrete
-            block.
+            No study sessions recorded for this week yet. Start with one
+            concrete block.
           </p>
         ) : (
           <ScrollArea className="max-h-[30rem] pr-4">
@@ -41,22 +41,22 @@ export function SessionList({ sessions, onRemove }: SessionListProps) {
               {sessions.map((session) => (
                 <article
                   key={session.id}
-                  className="flex flex-col gap-3 rounded-lg border border-border/50 bg-gradient-to-r from-background/60 to-background/80 p-5 shadow-sm transition-all hover:shadow-md sm:flex-row sm:items-start sm:justify-between"
+                  className="flex flex-col gap-3 rounded-xl border border-white/[0.04] bg-white/[0.02] p-5 sm:flex-row sm:items-start sm:justify-between"
                 >
                   <div className="min-w-0 space-y-3">
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline">{session.date}</Badge>
-                      <Badge variant="secondary" className="font-bold">{session.hours}h</Badge>
-                      <Badge variant="secondary" className="font-bold">
+                      <Badge variant="secondary">{session.hours}h</Badge>
+                      <Badge variant="default">
                         {focusAreaLabels[session.focusArea]}
                       </Badge>
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-base font-bold leading-6 text-foreground">
+                      <h3 className="text-base font-semibold leading-6 text-foreground">
                         {session.task}
                       </h3>
                       {session.outcome ? (
-                        <p className="text-sm text-foreground/80 font-medium">
+                        <p className="text-sm text-foreground/70 font-medium">
                           {session.outcome}
                         </p>
                       ) : null}
@@ -68,10 +68,10 @@ export function SessionList({ sessions, onRemove }: SessionListProps) {
                     </div>
                   </div>
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
                     onClick={() => void onRemove(session.id)}
-                    className="font-semibold"
+                    className="text-destructive hover:text-destructive hover:bg-destructive/10"
                   >
                     Remove
                   </Button>
