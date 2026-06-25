@@ -8,7 +8,7 @@ const outputPath = path.join(
   "src/infrastructure/seeds/roadmap-data.generated.json",
 );
 
-const ROADMAP_START = new Date(2026, 2, 16);
+const ROADMAP_START = new Date(2026, 5, 29);
 
 const SHORT_MONTHS = [
   "Jan",
