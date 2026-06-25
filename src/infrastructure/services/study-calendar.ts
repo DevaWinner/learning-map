@@ -1,4 +1,4 @@
-const ROADMAP_START = new Date(2026, 2, 16);
+const ROADMAP_START = new Date(2026, 5, 29);
 
 function startOfDay(date: Date): Date {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate());
