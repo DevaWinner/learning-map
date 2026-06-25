@@ -1,4 +1,4 @@
-Here’s a 12-month, **week-by-week (20 hrs/week)** pathway that takes you from **zero → advanced AI development**, starting **Monday, Jan 5, 2026**. It builds **Python + math from scratch**, then **ML → Deep Learning → GenAI/LLMs → MLOps/Production**, with real projects all the way.
+Here’s a 12-month, **week-by-week (20 hrs/week)** pathway that takes you from **zero → advanced AI development**, starting **Monday, June 29, 2026**. It builds **Python + math from scratch**, then **ML → Deep Learning → GenAI/LLMs → MLOps/Production**, with real projects all the way.
 
 ---
 
@@ -51,119 +51,124 @@ You’ll follow this rhythm, changing the mix as you advance:
 
 ---
 
-# 12-Month Week-by-Week Roadmap (Jan 5, 2026 → Jan 3, 2027)
-
-## January 2026
-
-| Week | Dates         | Coursera (Core)       | Math (Khan)            | Build (Deliverable)                                |
-| ---: | ------------- | --------------------- | ---------------------- | -------------------------------------------------- |
-|    1 | Jan 5–Jan 11  | C-PY: start course 1  | KA-Pre basics          | Setup: Python + Jupyter + GitHub repo “ai-journey” |
-|    2 | Jan 12–Jan 18 | C-PY course 1         | KA-Pre → KA-A1 intro   | 20 tiny scripts (variables, loops, functions)      |
-|    3 | Jan 19–Jan 25 | C-PY course 1         | KA-A1 linear equations | CLI calculator + unit converter                    |
-|    4 | Jan 26–Feb 1  | C-PY: finish course 1 | KA-A1 functions/graphs | Mini-project: CSV reader + summary stats           |
-
-## February 2026
-
-| Week | Dates         | Coursera (Core)                        | Math (Khan)   | Build (Deliverable)                                       |
-| ---: | ------------- | -------------------------------------- | ------------- | --------------------------------------------------------- |
-|    5 | Feb 2–Feb 8   | C-PY: start course 2 (data structures) | KA-A1         | Word counter + basic text analytics                       |
-|    6 | Feb 9–Feb 15  | C-PY course 2                          | KA-A1         | File I/O: log parser → clean outputs                      |
-|    7 | Feb 16–Feb 22 | C-PY: finish course 2                  | KA-STAT intro | Notebook: explore a small dataset                         |
-|    8 | Feb 23–Mar 1  | Kaggle Learn Python (fast practice)    | KA-STAT       | Kaggle Python exercises + 1 small notebook ([Kaggle][24]) |
-
-## March 2026
-
-| Week | Dates         | Coursera (Core)                                 | Math (Khan)           | Build (Deliverable)                                |
-| ---: | ------------- | ----------------------------------------------- | --------------------- | -------------------------------------------------- |
-|    9 | Mar 2–Mar 8   | IBM “Python for Data Science…” (optional boost) | KA-LA vectors         | Implement vectors/matrices in Python               |
-|   10 | Mar 9–Mar 15  | Kaggle Intro to ML (quick entry)                | KA-LA matrices        | First scikit-learn model + write-up ([Kaggle][26]) |
-|   11 | Mar 16–Mar 22 | C-ML: start course 1                            | KA-CALC1 limits       | Linear regression: from scratch + sklearn          |
-|   12 | Mar 23–Mar 29 | C-ML course 1                                   | KA-CALC1 derivatives  | Logistic regression + metrics (precision/recall)   |
-|   13 | Mar 30–Apr 5  | C-ML course 1 wrap                              | KA-STAT mean/variance | Mini-project: classification on real dataset       |
-
-## April 2026
-
-| Week | Dates         | Coursera (Core)               | Math (Khan)           | Build (Deliverable)                       |
-| ---: | ------------- | ----------------------------- | --------------------- | ----------------------------------------- |
-|   14 | Apr 6–Apr 12  | C-MATH: Linear Algebra for ML | KA-LA                 | Vectorization + gradient descent notebook |
-|   15 | Apr 13–Apr 19 | C-ML: course 2 begins         | KA-STAT               | Trees/ensembles + cross-validation        |
-|   16 | Apr 20–Apr 26 | C-ML course 2                 | KA-CALC1 chain rule   | Feature engineering + pipelines           |
-|   17 | Apr 27–May 3  | C-ML: course 3 begins         | KA-STAT distributions | Clustering + PCA + anomaly detection      |
-
-## May 2026
-
-| Week | Dates         | Coursera (Core)                | Math (Khan)        | Build (Deliverable)                        |
-| ---: | ------------- | ------------------------------ | ------------------ | ------------------------------------------ |
-|   18 | May 4–May 10  | Finish C-ML (course 3)         | KA-STAT            | Capstone 1: end-to-end ML notebook         |
-|   19 | May 11–May 17 | C-PROD: start ML in Production | KA-STAT            | Convert model → FastAPI inference endpoint |
-|   20 | May 18–May 24 | C-PROD continue                | KA-CALC1 gradients | Dockerize API + basic tests                |
-|   21 | May 25–May 31 | C-PROD finish                  | KA-LA recap        | Deploy v1 (Render/VM) + README + demo      |
+# 12-Month Week-by-Week Roadmap (Jun 29, 2026 → Jun 27, 2027)
 
 ## June 2026
 
-| Week | Dates         | Coursera (Core)              | Math (Khan)           | Build (Deliverable)                                             |
-| ---: | ------------- | ---------------------------- | --------------------- | --------------------------------------------------------------- |
-|   22 | Jun 1–Jun 7   | C-DL: course 1 begins        | KA-CALC1              | PyTorch basics + MNIST classifier ([PyTorch Documentation][21]) |
-|   23 | Jun 8–Jun 14  | C-DL: course 2 begins        | KA-LA eigen/intuition | Regularization + batch norm experiments                         |
-|   24 | Jun 15–Jun 21 | C-DL: course 3 (ML projects) | KA-STAT               | Write “error analysis” + experiment log                         |
-|   25 | Jun 22–Jun 28 | C-DL: course 4 (CNNs)        | KA-LA                 | CIFAR-10 CNN + training curves                                  |
-|   26 | Jun 29–Jul 5  | Buffer / catch-up week       | KA-MVC intro          | Refactor repo + clean portfolio page                            |
+| Week | Dates         | Coursera (Core)       | Math (Khan)            | Build (Deliverable)                                |
+| ---: | ------------- | --------------------- | ---------------------- | -------------------------------------------------- |
+|    1 | Jun 29–Jul 5  | C-PY: start course 1  | KA-Pre basics          | Setup: Python + Jupyter + GitHub repo “ai-journey” |
 
 ## July 2026
 
-| Week | Dates         | Coursera (Core)                  | Math (Khan)                | Build (Deliverable)                                                    |
-| ---: | ------------- | -------------------------------- | -------------------------- | ---------------------------------------------------------------------- |
-|   27 | Jul 6–Jul 12  | C-DL course 4                    | KA-MVC partial derivatives | Transfer learning (ResNet) on custom images                            |
-|   28 | Jul 13–Jul 19 | C-DL: course 5 (sequence models) | KA-STAT                    | Text classification: RNN/GRU baseline                                  |
-|   29 | Jul 20–Jul 26 | C-DL course 5                    | KA-LA attention intuition  | Start Hugging Face course + transformer fine-tune ([Hugging Face][23]) |
-|   30 | Jul 27–Aug 2  | Finish C-DL                      | KA-CALC1 recap             | Capstone 2: DL project + demo notebook                                 |
+| Week | Dates         | Coursera (Core)                        | Math (Khan)           | Build (Deliverable)                                       |
+| ---: | ------------- | -------------------------------------- | --------------------- | --------------------------------------------------------- |
+|    2 | Jul 6–Jul 12  | C-PY course 1                         | KA-Pre → KA-A1 intro   | 20 tiny scripts (variables, loops, functions)             |
+|    3 | Jul 13–Jul 19 | C-PY course 1                         | KA-A1 linear equations | CLI calculator + unit converter                           |
+|    4 | Jul 20–Jul 26 | C-PY: finish course 1                 | KA-A1 functions/graphs | Mini-project: CSV reader + summary stats                  |
+|    5 | Jul 27–Aug 2  | C-PY: start course 2 (data structures) | KA-A1                 | Word counter + basic text analytics                       |
 
 ## August 2026
 
-| Week | Dates         | Coursera (Core)       | Math (Khan)   | Build (Deliverable)                                                            |
-| ---: | ------------- | --------------------- | ------------- | ------------------------------------------------------------------------------ |
-|   31 | Aug 3–Aug 9   | C-CV: course 1        | KA-LA         | Data augmentation + CV baseline                                                |
-|   32 | Aug 10–Aug 16 | C-CV: course 2        | KA-STAT       | Improve model + proper validation                                              |
-|   33 | Aug 17–Aug 23 | C-CV: course 3        | KA-MVC        | Build a Gradio/Streamlit CV demo                                               |
-|   34 | Aug 24–Aug 30 | fast.ai (1–2 lessons) | KA-LA recap   | Speedrun: practical training tricks ([Practical Deep Learning for Coders][22]) |
-|   35 | Aug 31–Sep 6  | Portfolio week        | KA-STAT recap | Write 1 case study + publish repo                                              |
+| Week | Dates         | Coursera (Core)                        | Math (Khan)   | Build (Deliverable)                                       |
+| ---: | ------------- | -------------------------------------- | ------------- | --------------------------------------------------------- |
+|    6 | Aug 3–Aug 9   | C-PY course 2                          | KA-A1         | File I/O: log parser → clean outputs                      |
+|    7 | Aug 10–Aug 16 | C-PY: finish course 2                  | KA-STAT intro | Notebook: explore a small dataset                         |
+|    8 | Aug 17–Aug 23 | Kaggle Learn Python (fast practice)    | KA-STAT       | Kaggle Python exercises + 1 small notebook ([Kaggle][24]) |
+|    9 | Aug 24–Aug 30 | IBM “Python for Data Science…” (optional boost) | KA-LA vectors | Implement vectors/matrices in Python               |
 
 ## September 2026
 
-| Week | Dates         | Coursera (Core) | Math (Khan)    | Build (Deliverable)                  |
-| ---: | ------------- | --------------- | -------------- | ------------------------------------ |
-|   36 | Sep 7–Sep 13  | C-NLP: course 1 | KA-STAT        | TF-IDF vs embeddings comparison      |
-|   37 | Sep 14–Sep 20 | C-NLP: course 2 | KA-LA          | Fine-tune BERT classifier + eval     |
-|   38 | Sep 21–Sep 27 | C-NLP: course 3 | KA-STAT        | Build summarization or Q&A demo      |
-|   39 | Sep 28–Oct 4  | C-NLP: course 4 | KA-CALC1 light | Capstone 3: NLP app + short write-up |
+| Week | Dates         | Coursera (Core)                | Math (Khan)        | Build (Deliverable)                        |
+| ---: | ------------- | ------------------------------ | ------------------ | ------------------------------------------ |
+|   10 | Aug 31–Sep 6  | Kaggle Intro to ML (quick entry) | KA-LA matrices    | First scikit-learn model + write-up ([Kaggle][26]) |
+|   11 | Sep 7–Sep 13  | C-ML: start course 1            | KA-CALC1 limits    | Linear regression: from scratch + sklearn          |
+|   12 | Sep 14–Sep 20 | C-ML course 1                   | KA-CALC1 derivatives | Logistic regression + metrics (precision/recall)   |
+|   13 | Sep 21–Sep 27 | C-ML course 1 wrap              | KA-STAT mean/variance | Mini-project: classification on real dataset       |
 
 ## October 2026
 
-| Week | Dates         | Coursera (Core)                            | Math (Khan)     | Build (Deliverable)                           |
-| ---: | ------------- | ------------------------------------------ | --------------- | --------------------------------------------- |
-|   40 | Oct 5–Oct 11  | C-GEN: module 1                            | (light) KA-STAT | Prompting patterns + evaluation harness       |
-|   41 | Oct 12–Oct 18 | C-GEN: module 2                            | (light) KA-LA   | Embeddings + vector search prototype          |
-|   42 | Oct 19–Oct 25 | C-GEN: module 3                            | (light) KA-STAT | Build RAG v1 (your docs → answers)            |
-|   43 | Oct 26–Nov 1  | AI strategy/ethics quick course (optional) | —               | Add safety: citations, refusal modes, logging |
+| Week | Dates         | Coursera (Core)               | Math (Khan)           | Build (Deliverable)                       |
+| ---: | ------------- | ----------------------------- | --------------------- | ----------------------------------------- |
+|   14 | Sep 28–Oct 4  | C-MATH: Linear Algebra for ML | KA-LA                 | Vectorization + gradient descent notebook |
+|   15 | Oct 5–Oct 11  | C-ML: course 2 begins         | KA-STAT               | Trees/ensembles + cross-validation        |
+|   16 | Oct 12–Oct 18 | C-ML course 2                 | KA-CALC1 chain rule   | Feature engineering + pipelines           |
+|   17 | Oct 19–Oct 25 | C-ML: course 3 begins         | KA-STAT distributions | Clustering + PCA + anomaly detection      |
 
 ## November 2026
 
-| Week | Dates         | Coursera (Core)  | Math (Khan) | Build (Deliverable)                           |
-| ---: | ------------- | ---------------- | ----------- | --------------------------------------------- |
-|   44 | Nov 2–Nov 8   | C-MLOPS: start   | —           | CI/CD basics + Docker + structured configs    |
-|   45 | Nov 9–Nov 15  | C-MLOPS continue | —           | Experiment tracking + model registry (simple) |
-|   46 | Nov 16–Nov 22 | C-MLOPS continue | —           | Serving: batching, async jobs, caching        |
-|   47 | Nov 23–Nov 29 | C-MLOPS continue | —           | Monitoring: drift checks + alert rules        |
-|   48 | Nov 30–Dec 6  | Finish C-MLOPS   | —           | Capstone 4: “productionized” ML/LLM service   |
+| Week | Dates         | Coursera (Core)                | Math (Khan)        | Build (Deliverable)                        |
+| ---: | ------------- | ------------------------------ | ------------------ | ------------------------------------------ |
+|   18 | Oct 26–Nov 1  | Finish C-ML (course 3)        | KA-STAT            | Capstone 1: end-to-end ML notebook         |
+|   19 | Nov 2–Nov 8   | C-PROD: start ML in Production | KA-STAT            | Convert model → FastAPI inference endpoint |
+|   20 | Nov 9–Nov 15  | C-PROD continue                | KA-CALC1 gradients | Dockerize API + basic tests                |
+|   21 | Nov 16–Nov 22 | C-PROD finish                  | KA-LA recap        | Deploy v1 (Render/VM) + README + demo      |
 
 ## December 2026
 
+| Week | Dates         | Coursera (Core)              | Math (Khan)           | Build (Deliverable)                                             |
+| ---: | ------------- | ---------------------------- | --------------------- | --------------------------------------------------------------- |
+|   22 | Nov 23–Nov 29 | C-DL: course 1 begins        | KA-CALC1              | PyTorch basics + MNIST classifier ([PyTorch Documentation][21]) |
+|   23 | Nov 30–Dec 6  | C-DL: course 2 begins        | KA-LA eigen/intuition | Regularization + batch norm experiments                         |
+|   24 | Dec 7–Dec 13  | C-DL: course 3 (ML projects) | KA-STAT               | Write “error analysis” + experiment log                         |
+|   25 | Dec 14–Dec 20 | C-DL: course 4 (CNNs)        | KA-LA                 | CIFAR-10 CNN + training curves                                  |
+|   26 | Dec 21–Dec 27 | Buffer / catch-up week       | KA-MVC intro          | Refactor repo + clean portfolio page                            |
+|   27 | Dec 28–Jan 3  | C-DL course 4                | KA-MVC partial derivatives | Transfer learning (ResNet) on custom images                  |
+
+## January 2027
+
+| Week | Dates         | Coursera (Core)                  | Math (Khan)                | Build (Deliverable)                                                    |
+| ---: | ------------- | -------------------------------- | -------------------------- | ---------------------------------------------------------------------- |
+|   28 | Jan 4–Jan 10  | C-DL: course 5 (sequence models) | KA-STAT                    | Text classification: RNN/GRU baseline                                  |
+|   29 | Jan 11–Jan 17 | C-DL course 5                    | KA-LA attention intuition  | Start Hugging Face course + transformer fine-tune ([Hugging Face][23]) |
+|   30 | Jan 18–Jan 24 | Finish C-DL                      | KA-CALC1 recap             | Capstone 2: DL project + demo notebook                                 |
+|   31 | Jan 25–Jan 31 | C-CV: course 1                   | KA-LA                     | Data augmentation + CV baseline                                        |
+
+## February 2027
+
+| Week | Dates         | Coursera (Core)       | Math (Khan)   | Build (Deliverable)                                                            |
+| ---: | ------------- | --------------------- | ------------- | ------------------------------------------------------------------------------ |
+|   32 | Feb 1–Feb 7   | C-CV: course 2        | KA-STAT       | Improve model + proper validation                                              |
+|   33 | Feb 8–Feb 14  | C-CV: course 3        | KA-MVC        | Build a Gradio/Streamlit CV demo                                               |
+|   34 | Feb 15–Feb 21 | fast.ai (1–2 lessons) | KA-LA recap   | Speedrun: practical training tricks ([Practical Deep Learning for Coders][22]) |
+|   35 | Feb 22–Feb 28 | Portfolio week        | KA-STAT recap | Write 1 case study + publish repo                                              |
+
+## March 2027
+
+| Week | Dates         | Coursera (Core) | Math (Khan)    | Build (Deliverable)                  |
+| ---: | ------------- | --------------- | -------------- | ------------------------------------ |
+|   36 | Mar 1–Mar 7   | C-NLP: course 1 | KA-STAT        | TF-IDF vs embeddings comparison      |
+|   37 | Mar 8–Mar 14  | C-NLP: course 2 | KA-LA          | Fine-tune BERT classifier + eval     |
+|   38 | Mar 15–Mar 21 | C-NLP: course 3 | KA-STAT        | Build summarization or Q&A demo      |
+|   39 | Mar 22–Mar 28 | C-NLP: course 4 | KA-CALC1 light | Capstone 3: NLP app + short write-up |
+
+## April 2027
+
+| Week | Dates         | Coursera (Core)                            | Math (Khan)     | Build (Deliverable)                           |
+| ---: | ------------- | ------------------------------------------ | --------------- | --------------------------------------------- |
+|   40 | Mar 29–Apr 4  | C-GEN: module 1                            | (light) KA-STAT | Prompting patterns + evaluation harness       |
+|   41 | Apr 5–Apr 11  | C-GEN: module 2                            | (light) KA-LA   | Embeddings + vector search prototype          |
+|   42 | Apr 12–Apr 18 | C-GEN: module 3                            | (light) KA-STAT | Build RAG v1 (your docs → answers)            |
+|   43 | Apr 19–Apr 25 | AI strategy/ethics quick course (optional) | —               | Add safety: citations, refusal modes, logging |
+
+## May 2027
+
+| Week | Dates         | Coursera (Core)  | Math (Khan) | Build (Deliverable)                           |
+| ---: | ------------- | ---------------- | ----------- | --------------------------------------------- |
+|   44 | Apr 26–May 2  | C-MLOPS: start   | —           | CI/CD basics + Docker + structured configs    |
+|   45 | May 3–May 9   | C-MLOPS continue | —           | Experiment tracking + model registry (simple) |
+|   46 | May 10–May 16 | C-MLOPS continue | —           | Serving: batching, async jobs, caching        |
+|   47 | May 17–May 23 | C-MLOPS continue | —           | Monitoring: drift checks + alert rules        |
+|   48 | May 24–May 30 | Finish C-MLOPS   | —           | Capstone 4: “productionized” ML/LLM service   |
+
+## June 2027
+
 | Week | Dates         | Coursera (Core) | Math (Khan)         | Build (Deliverable)                       |
 | ---: | ------------- | --------------- | ------------------- | ----------------------------------------- |
-|   49 | Dec 7–Dec 13  | C-RL: course 1  | KA-STAT expectation | Bandits + policy evaluation notebook      |
-|   50 | Dec 14–Dec 20 | C-RL: course 2  | —                   | Q-learning agent (classic control)        |
-|   51 | Dec 21–Dec 27 | C-RL: course 3  | —                   | Deep RL mini-experiment (PyTorch)         |
-|   52 | Dec 28–Jan 3  | Final wrap      | —                   | Polish portfolio + resume + project demos |
+|   49 | May 31–Jun 6  | C-RL: course 1  | KA-STAT expectation | Bandits + policy evaluation notebook      |
+|   50 | Jun 7–Jun 13  | C-RL: course 2  | —                   | Q-learning agent (classic control)        |
+|   51 | Jun 14–Jun 20 | C-RL: course 3  | —                   | Deep RL mini-experiment (PyTorch)         |
+|   52 | Jun 21–Jun 27 | Final wrap      | —                   | Polish portfolio + resume + project demos |
 
 ---
 
